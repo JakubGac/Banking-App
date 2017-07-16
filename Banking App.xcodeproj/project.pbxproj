@@ -54,14 +54,22 @@
 		279386491F1B86B900C3946A /* Banking App */ = {
 			isa = PBXGroup;
 			children = (
-				2793864A1F1B86B900C3946A /* AppDelegate.swift */,
 				2793864C1F1B86B900C3946A /* ViewController.swift */,
 				2793864E1F1B86B900C3946A /* Main.storyboard */,
+				2793865C1F1B86F500C3946A /* Supporting files */,
+			);
+			path = "Banking App";
+			sourceTree = "<group>";
+		};
+		2793865C1F1B86F500C3946A /* Supporting files */ = {
+			isa = PBXGroup;
+			children = (
+				2793864A1F1B86B900C3946A /* AppDelegate.swift */,
 				279386511F1B86B900C3946A /* Assets.xcassets */,
 				279386531F1B86B900C3946A /* LaunchScreen.storyboard */,
 				279386561F1B86B900C3946A /* Info.plist */,
 			);
-			path = "Banking App";
+			name = "Supporting files";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
