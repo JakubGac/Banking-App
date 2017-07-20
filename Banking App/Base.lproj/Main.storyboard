@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="gPW-GR-Zqq">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="srE-VR-WWC">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -10,17 +10,208 @@
     </dependencies>
     <scenes>
         <!--Navigation Controller-->
-        <scene sceneID="jls-C6-5Z3">
+        <scene sceneID="nLx-Lv-PzV">
             <objects>
-                <navigationController id="gPW-GR-Zqq" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="2LD-nQ-Rnn">
+                <navigationController id="srE-VR-WWC" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="7Ym-g6-T8b">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
+                    <toolbar key="toolbar" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="Ab2-4T-BMJ">
+                        <rect key="frame" x="0.0" y="623" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </toolbar>
+                    <connections>
+                        <segue destination="ba7-fg-XVF" kind="relationship" relationship="rootViewController" id="ZzU-KP-0lD"/>
+                    </connections>
                 </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="kWI-ne-OB3" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="83J-C6-UGO" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="68" y="93"/>
+            <point key="canvasLocation" x="578" y="90"/>
+        </scene>
+        <!--Accounts-->
+        <scene sceneID="9my-Fq-Crz">
+            <objects>
+                <viewController id="ba7-fg-XVF" customClass="AccountsViewController" customModule="Banking_App" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="XgJ-A7-czZ"/>
+                        <viewControllerLayoutGuide type="bottom" id="O6F-oj-M1H"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="LdF-Rm-iiX">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="50" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="gAp-c2-TLn">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="50" id="DmE-cs-li4">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="50"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="DmE-cs-li4" id="KAX-aA-6hn">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="49.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="gAp-c2-TLn" firstAttribute="leading" secondItem="LdF-Rm-iiX" secondAttribute="leading" id="AbF-dk-Trt"/>
+                            <constraint firstItem="gAp-c2-TLn" firstAttribute="top" secondItem="LdF-Rm-iiX" secondAttribute="top" id="GCB-bZ-rDH"/>
+                            <constraint firstItem="O6F-oj-M1H" firstAttribute="top" secondItem="gAp-c2-TLn" secondAttribute="bottom" id="Qcb-5M-OqI"/>
+                            <constraint firstAttribute="trailing" secondItem="gAp-c2-TLn" secondAttribute="trailing" id="TeQ-sB-QCK"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Accounts" id="woI-TJ-gjq">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="EzH-z0-LKa">
+                            <color key="tintColor" cocoaTouchSystemColor="darkTextColor"/>
+                            <connections>
+                                <segue destination="PPP-aF-3f9" kind="show" id="xrN-S0-Y1N"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <segue destination="Xe4-Xv-JPl" kind="show" id="0g7-wM-cPk"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ILk-BT-qSD" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1389.5999999999999" y="89.505247376311857"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="fOz-nt-Z6d">
+            <objects>
+                <navigationController id="PPP-aF-3f9" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="xhi-8s-x5Z">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="cZY-q4-qIc" kind="relationship" relationship="rootViewController" id="7G7-kj-RS7"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="MRs-ON-Ib0" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1389" y="966"/>
+        </scene>
+        <!--New Account-->
+        <scene sceneID="Dcf-b2-5fE">
+            <objects>
+                <viewController id="cZY-q4-qIc" customClass="NewAccountViewController" customModule="Banking_App" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Lwn-VN-vg1"/>
+                        <viewControllerLayoutGuide type="bottom" id="hlJ-Le-kvP"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="EIB-Oz-Xjp">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="New Account" id="8MB-Zd-cBf">
+                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="BmX-fa-UfR">
+                            <connections>
+                                <segue destination="WZg-yB-aYm" kind="unwind" unwindAction="cancelAccountCreationWithSegue:" id="9pm-hs-OSV"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="psS-Bw-Zu0">
+                            <connections>
+                                <segue destination="WZg-yB-aYm" kind="unwind" unwindAction="saveAccountWithSegue:" id="Sbt-il-b2T"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="0um-WS-CIS" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="WZg-yB-aYm" userLabel="Exit" sceneMemberID="exit"/>
+            </objects>
+            <point key="canvasLocation" x="2195" y="966"/>
+        </scene>
+        <!--Account Name-->
+        <scene sceneID="QbF-Mh-Cdc">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="QGu-8W-WF0" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <viewController id="Xe4-Xv-JPl" customClass="AccountDetailsViewController" customModule="Banking_App" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="FXR-P8-SnY"/>
+                        <viewControllerLayoutGuide type="bottom" id="xdW-3a-mV7"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="mCL-Vc-Wba">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="50" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="cl1-Y0-hib">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationWidth="10" rowHeight="50" id="yKA-1B-8ni">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="50"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="yKA-1B-8ni" id="yZV-IO-sc7">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="49.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="cl1-Y0-hib" firstAttribute="top" secondItem="mCL-Vc-Wba" secondAttribute="top" id="JSS-xY-Mvz"/>
+                            <constraint firstAttribute="trailing" secondItem="cl1-Y0-hib" secondAttribute="trailing" id="Wpq-qV-PMg"/>
+                            <constraint firstItem="xdW-3a-mV7" firstAttribute="top" secondItem="cl1-Y0-hib" secondAttribute="bottom" id="Yfr-Oz-Ew9"/>
+                            <constraint firstItem="cl1-Y0-hib" firstAttribute="leading" secondItem="mCL-Vc-Wba" secondAttribute="leading" id="jTY-TY-B7V"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Account Name" id="4Af-et-rVJ">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="odb-Tv-prO">
+                            <color key="tintColor" cocoaTouchSystemColor="darkTextColor"/>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <segue destination="18R-DV-VyI" kind="show" id="IZX-Nj-666"/>
+                    </connections>
+                </viewController>
+            </objects>
+            <point key="canvasLocation" x="2196" y="90"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="ADf-yN-zKs">
+            <objects>
+                <navigationController id="18R-DV-VyI" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="d06-QR-AdL">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="4se-Ky-iTd" kind="relationship" relationship="rootViewController" id="5W5-QM-NGE"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="fjM-dR-aCD" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2998" y="90"/>
+        </scene>
+        <!--New Transaction-->
+        <scene sceneID="3QC-Zc-uPB">
+            <objects>
+                <viewController id="4se-Ky-iTd" customClass="NewTransactionViewController" customModule="Banking_App" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="sRm-bu-eRb"/>
+                        <viewControllerLayoutGuide type="bottom" id="nYY-Sm-IjP"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Lfi-LC-g2E">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="New Transaction" id="w12-yG-gbu">
+                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="edy-l7-fik"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="9Q6-VQ-ZYG"/>
+                    </navigationItem>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="V1N-LY-Q1K" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3826" y="90"/>
         </scene>
     </scenes>
 </document>

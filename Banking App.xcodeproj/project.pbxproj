@@ -8,6 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		270403CC1F1F54E300770854 /* ModelController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 270403CB1F1F54E300770854 /* ModelController.swift */; };
+		274489F01F210B49009EB1F6 /* AccountsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 274489EF1F210B49009EB1F6 /* AccountsViewController.swift */; };
+		274489F21F210B5F009EB1F6 /* AccountDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 274489F11F210B5F009EB1F6 /* AccountDetailsViewController.swift */; };
+		274489F41F210B6C009EB1F6 /* NewAccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 274489F31F210B6C009EB1F6 /* NewAccountViewController.swift */; };
+		274489F61F210B87009EB1F6 /* NewTransactionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 274489F51F210B87009EB1F6 /* NewTransactionViewController.swift */; };
 		276B3DE11F1E96520049D9FF /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 276B3DE01F1E96520049D9FF /* Model.swift */; };
 		2793864B1F1B86B900C3946A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2793864A1F1B86B900C3946A /* AppDelegate.swift */; };
 		279386501F1B86B900C3946A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2793864E1F1B86B900C3946A /* Main.storyboard */; };
@@ -17,6 +21,10 @@
 
 /* Begin PBXFileReference section */
 		270403CB1F1F54E300770854 /* ModelController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModelController.swift; sourceTree = "<group>"; };
+		274489EF1F210B49009EB1F6 /* AccountsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountsViewController.swift; sourceTree = "<group>"; };
+		274489F11F210B5F009EB1F6 /* AccountDetailsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountDetailsViewController.swift; sourceTree = "<group>"; };
+		274489F31F210B6C009EB1F6 /* NewAccountViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewAccountViewController.swift; sourceTree = "<group>"; };
+		274489F51F210B87009EB1F6 /* NewTransactionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewTransactionViewController.swift; sourceTree = "<group>"; };
 		276B3DE01F1E96520049D9FF /* Model.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
 		279386471F1B86B900C3946A /* Banking App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Banking App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2793864A1F1B86B900C3946A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -58,6 +66,10 @@
 			children = (
 				276B3DE01F1E96520049D9FF /* Model.swift */,
 				270403CB1F1F54E300770854 /* ModelController.swift */,
+				274489EF1F210B49009EB1F6 /* AccountsViewController.swift */,
+				274489F11F210B5F009EB1F6 /* AccountDetailsViewController.swift */,
+				274489F31F210B6C009EB1F6 /* NewAccountViewController.swift */,
+				274489F51F210B87009EB1F6 /* NewTransactionViewController.swift */,
 				2793864E1F1B86B900C3946A /* Main.storyboard */,
 				2793865C1F1B86F500C3946A /* Supporting files */,
 			);
@@ -150,7 +162,11 @@
 			files = (
 				270403CC1F1F54E300770854 /* ModelController.swift in Sources */,
 				2793864B1F1B86B900C3946A /* AppDelegate.swift in Sources */,
+				274489F01F210B49009EB1F6 /* AccountsViewController.swift in Sources */,
+				274489F61F210B87009EB1F6 /* NewTransactionViewController.swift in Sources */,
+				274489F21F210B5F009EB1F6 /* AccountDetailsViewController.swift in Sources */,
 				276B3DE11F1E96520049D9FF /* Model.swift in Sources */,
+				274489F41F210B6C009EB1F6 /* NewAccountViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
