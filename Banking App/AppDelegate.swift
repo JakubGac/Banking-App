@@ -13,9 +13,21 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
 
-
+    struct Appearance {
+        static func setGlobalAppearance() {
+            UINavigationBar.appearance().tintColor = .white
+            UINavigationBar.appearance().barTintColor = .skyBlue
+            UINavigationBar.appearance().isTranslucent = false
+            UINavigationBar.appearance().titleTextAttributes = [NSForegroundColorAttributeName: UIColor.white]
+        }
+    }
+    
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        Appearance.setGlobalAppearance()
+        let initialController = window?.rootViewController as! UINavigationController
+        let accountsController = initialController.viewControllers.first as! AccountsViewController
+        accountsController.stateController = StateController(storageController: StorageController())
         return true
     }
 
@@ -40,7 +52,5 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func applicationWillTerminate(_ application: UIApplication) {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     }
-
-
 }
 

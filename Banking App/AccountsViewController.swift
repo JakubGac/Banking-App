@@ -10,30 +10,87 @@ import UIKit
 
 class AccountsViewController: UIViewController {
 
+    @IBOutlet weak var tableView: UITableView!
+    
+    var stateController: StateController!
+    
+    var dataSource: AccountsDataSource!
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        dataSource = AccountsDataSource(accounts: stateController.accounts)
+        tableView.dataSource = dataSource
+        tableView.reloadData()
+    }
+    
     @IBAction func cancelAccountCreation(segue: UIStoryboardSegue) {
-        
+        print("cancel")
     }
     
     @IBAction func saveAccount(segue: UIStoryboardSegue) {
-        
+        print("save")
+    }
+}
+
+class AccountsDataSource: NSObject {
+    var accounts: [Account]
+    
+    init(accounts: [Account]) {
+        self.accounts = accounts
+    }
+}
+
+extension AccountsDataSource: UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return accounts.count
     }
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "AccountCell", for: indexPath) as! AccountCell
+        let index = indexPath.row
+        let account = accounts[index]
+        cell.model = AccountCell.Model(account: account, index: index)
+        return cell
     }
+}
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+class AccountCell: UITableViewCell {
+    @IBOutlet weak var nameLabel: UILabel!
+    @IBOutlet weak var totalLabel: UILabel!
+    @IBOutlet weak var bankLabel: UILabel!
+    @IBOutlet weak var numberLabel: UILabel!
+    @IBOutlet weak var coloredView: UIView!
+    
+    var model: Model? {
+        didSet {
+            guard let model = model else {
+                return
+            }
+            nameLabel.text = model.name
+            totalLabel.text = model.total
+            bankLabel.text = model.bank
+            numberLabel.text = model.number
+            coloredView.backgroundColor = model.color
+        }
     }
-    */
+}
 
+extension AccountCell {
+    struct Model {
+        let name: String
+        let total: String
+        let bank: String
+        let number: String
+        let color: UIColor
+        
+        init(account: Account, index: Int) {
+            name = account.name
+            total = account.total.dollarsFormatting
+            bank = account.bank
+            number = account.number.accountNumberFormatting
+            color = UIColor.color(for: index)
+        }
+    }
 }
 
 extension UIColor {
@@ -84,3 +141,36 @@ extension UIColor {
         }
     }
 }
+
+extension Float {
+    var dollarsFormatting: String {
+        let formatter = NumberFormatter()
+        formatter.numberStyle = .currency
+        formatter.currencySymbol = "$"
+        return formatter.string(from: NSNumber(value: self))!
+    }
+}
+
+extension String {
+    var accountNumberFormatting: String {
+        var formattedString = " "
+        for(index, character) in characters.enumerated() {
+            if index % 4 < 3 || index == characters.count - 1 {
+                formattedString.append(character)
+            } else {
+                formattedString.append("\(character)")
+            }
+        }
+        return formattedString
+    }
+}
+
+extension Date {
+    var transactionFormatting: String {
+        let formatter = DateFormatter()
+        formatter.dateStyle = .medium
+        formatter.timeStyle = .none
+        return formatter.string(from: self)
+    }
+}
+

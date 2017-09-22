@@ -78,18 +78,26 @@
                                                             <rect key="frame" x="8" y="57" width="343" height="49"/>
                                                             <subviews>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Bank Name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8fH-Si-Roc">
-                                                                    <rect key="frame" x="0.0" y="0.0" width="83" height="19.5"/>
+                                                                    <rect key="frame" x="0.0" y="0.0" width="343" height="19.5"/>
                                                                     <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                                     <nil key="textColor"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0123 4567 8901 2345 6789" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4ln-Of-kKb">
-                                                                    <rect key="frame" x="0.0" y="29.5" width="205" height="19.5"/>
+                                                                    <rect key="frame" x="0.0" y="29.5" width="343" height="19.5"/>
                                                                     <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                                     <nil key="textColor"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
                                                             </subviews>
+                                                            <constraints>
+                                                                <constraint firstItem="8fH-Si-Roc" firstAttribute="top" secondItem="Sxb-GV-2sh" secondAttribute="top" id="D8s-u7-wgu"/>
+                                                                <constraint firstItem="4ln-Of-kKb" firstAttribute="leading" secondItem="Sxb-GV-2sh" secondAttribute="leading" id="Mln-UU-nXN"/>
+                                                                <constraint firstItem="8fH-Si-Roc" firstAttribute="leading" secondItem="Sxb-GV-2sh" secondAttribute="leading" id="S78-h8-6Je"/>
+                                                                <constraint firstAttribute="bottom" secondItem="4ln-Of-kKb" secondAttribute="bottom" id="hqS-7H-6lq"/>
+                                                                <constraint firstAttribute="trailing" secondItem="8fH-Si-Roc" secondAttribute="trailing" id="jtH-dE-Fpb"/>
+                                                                <constraint firstAttribute="trailing" secondItem="4ln-Of-kKb" secondAttribute="trailing" id="plX-YX-Xsj"/>
+                                                            </constraints>
                                                         </stackView>
                                                     </subviews>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -113,7 +121,10 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
+                                            <outlet property="bankLabel" destination="8fH-Si-Roc" id="UhA-ra-exJ"/>
+                                            <outlet property="coloredView" destination="X7Q-9P-4z0" id="qs3-mj-i23"/>
                                             <outlet property="nameLabel" destination="edc-vI-Rui" id="pKI-9m-WZc"/>
+                                            <outlet property="numberLabel" destination="4ln-Of-kKb" id="7HK-Tm-alR"/>
                                             <outlet property="totalLabel" destination="BZW-o8-9Pu" id="W1z-F8-mpj"/>
                                         </connections>
                                     </tableViewCell>
@@ -131,12 +142,13 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="tableView" destination="gAp-c2-TLn" id="ojF-ff-FIA"/>
                         <segue destination="Xe4-Xv-JPl" kind="show" identifier="Show Account" id="0g7-wM-cPk"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ILk-BT-qSD" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1389.5999999999999" y="89.505247376311857"/>
+            <point key="canvasLocation" x="1388" y="89"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="fOz-nt-Z6d">
@@ -263,7 +275,7 @@
                                 <rect key="frame" x="0.0" y="180" width="375" height="487"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationWidth="10" reuseIdentifier="AccountTransactions" rowHeight="117" id="yKA-1B-8ni">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationWidth="10" reuseIdentifier="AccountTransactions" rowHeight="117" id="yKA-1B-8ni" customClass="TransactionCell" customModule="Banking_App" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="375" height="117"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="yKA-1B-8ni" id="yZV-IO-sc7">
@@ -288,6 +300,14 @@
                                                         <constraint firstItem="4px-gD-Bkf" firstAttribute="centerX" secondItem="TJ4-Qa-GJ5" secondAttribute="centerX" id="Zib-Iu-AKc"/>
                                                         <constraint firstItem="4px-gD-Bkf" firstAttribute="centerY" secondItem="TJ4-Qa-GJ5" secondAttribute="centerY" id="tCn-qu-R7q"/>
                                                     </constraints>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="layer.borderWidth">
+                                                            <integer key="value" value="3"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                            <integer key="value" value="50"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                    </userDefinedRuntimeAttributes>
                                                 </view>
                                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="fl1-DR-H5M">
                                                     <rect key="frame" x="116" y="18" width="88" height="80.5"/>
@@ -339,6 +359,13 @@
                                                 <constraint firstItem="TJ4-Qa-GJ5" firstAttribute="top" secondItem="yZV-IO-sc7" secondAttribute="topMargin" id="zuX-Ta-dls"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="amountLabel" destination="zaX-l1-NTd" id="fPw-fz-dFf"/>
+                                            <outlet property="categoryImageView" destination="4px-gD-Bkf" id="trm-rQ-UCY"/>
+                                            <outlet property="circleView" destination="TJ4-Qa-GJ5" id="keO-eL-GcM"/>
+                                            <outlet property="dateLabel" destination="MGy-PM-ikc" id="gTE-C9-QHB"/>
+                                            <outlet property="descriptionLabel" destination="2oa-Vi-KRS" id="BGt-xV-4Xi"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
@@ -365,7 +392,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QGu-8W-WF0" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2196" y="89.505247376311857"/>
+            <point key="canvasLocation" x="2194" y="89"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="ADf-yN-zKs">
@@ -777,10 +804,20 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="New Transaction" id="w12-yG-gbu">
-                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="edy-l7-fik"/>
-                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="9Q6-VQ-ZYG"/>
+                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="edy-l7-fik">
+                            <connections>
+                                <segue destination="xbd-8f-XHr" kind="unwind" unwindAction="cancelTransactionCreationWithSegue:" id="6I4-eU-Elr"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="9Q6-VQ-ZYG">
+                            <connections>
+                                <segue destination="xbd-8f-XHr" kind="unwind" unwindAction="saveTransactionWithSegue:" id="MJg-p4-BMK"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="amountTextField" destination="IGc-nY-nvu" id="oIP-fg-R2w"/>
+                        <outlet property="descriptionTextField" destination="ilG-Sd-QWJ" id="nzT-bB-1Sn"/>
                         <outletCollection property="categoryButtons" destination="a8d-7i-XSM" collectionClass="NSMutableArray" id="2Ja-rw-DHO"/>
                         <outletCollection property="ringViews" destination="zuN-bs-jur" collectionClass="NSMutableArray" id="K7A-uz-768"/>
                         <outletCollection property="categoryButtons" destination="q9N-2T-AnR" collectionClass="NSMutableArray" id="QNB-Q2-9Qm"/>
@@ -796,6 +833,7 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="V1N-LY-Q1K" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="xbd-8f-XHr" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="3823.1999999999998" y="88.605697151424295"/>
         </scene>
